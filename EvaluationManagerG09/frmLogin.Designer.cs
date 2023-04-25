@@ -68,6 +68,7 @@
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Prijava";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler( this.btnLogin_Click );
             // 
             // lblPassword
             // 
@@ -92,6 +93,7 @@
             this.txtPassword.Size = new System.Drawing.Size(188, 20);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // frmLogin
             // 

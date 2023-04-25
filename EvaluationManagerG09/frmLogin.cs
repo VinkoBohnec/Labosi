@@ -26,5 +26,18 @@ namespace EvaluationManagerG09
         {
 
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click( object sender, EventArgs e )
+        {
+            if (txtUsername.Text.Length == 0)
+            {
+                MessageBox.Show("Username nije unosen.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
