@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EvaluationManagerG09.Properties
+namespace Evaluation_Manager.Properties
 {
 
 

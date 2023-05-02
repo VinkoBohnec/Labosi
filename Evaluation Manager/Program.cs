@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EvaluationManagerG09
+namespace Evaluation_Manager
 {
     internal static class Program
     {
@@ -16,7 +17,15 @@ namespace EvaluationManagerG09
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new FrmLogin());
+
+            // DBLayer.DB.SetConfiguration("EvaluationManager", "vbohnec21", "bruh_naaahhh");
+            //SQL Server data tools
+            // add sql server
+            // naziv servera 
+            // SQL server authentification
+            // username/pass na mail
+            // Baza evaluation manager
         }
     }
 }
