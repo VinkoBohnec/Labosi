@@ -71,6 +71,7 @@
             // 
             this.txtTeacher.Location = new System.Drawing.Point(501, 277);
             this.txtTeacher.Name = "txtTeacher";
+            this.txtTeacher.ReadOnly = true;
             this.txtTeacher.Size = new System.Drawing.Size(100, 20);
             this.txtTeacher.TabIndex = 4;
             // 
@@ -78,6 +79,7 @@
             // 
             this.txtEvaluationDate.Location = new System.Drawing.Point(620, 277);
             this.txtEvaluationDate.Name = "txtEvaluationDate";
+            this.txtEvaluationDate.ReadOnly = true;
             this.txtEvaluationDate.Size = new System.Drawing.Size(100, 20);
             this.txtEvaluationDate.TabIndex = 5;
             // 
@@ -89,6 +91,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Spremi";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 

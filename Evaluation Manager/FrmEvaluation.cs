@@ -18,15 +18,36 @@ namespace Evaluation_Manager {
             m_Student = student;
         }
 
-        private void cboActivities_SelectedIndexChanged(object sender, EventArgs e) {
+        public CActivity GetCurrentActivity() {
             var activities = ActivityRepository.GetActivities();
-            var currentActivity = activities[cboActivities.SelectedIndex];
+            return activities[cboActivities.SelectedIndex];
+        }
+
+        private void cboActivities_SelectedIndexChanged(object sender, EventArgs e) {
+            var currentActivity = GetCurrentActivity();
             txtActivityDescription.Text = currentActivity.m_strDescription;
             txtMinforGrade.Text = currentActivity.m_iMinPointsGrade.ToString() + "/" + currentActivity.m_iMaxPoints.ToString();
             txtMinforSignature.Text = currentActivity.m_iMinPointsSignature.ToString() + "/" + currentActivity.m_iMaxPoints.ToString();
 
             numPoints.Minimum = 0;
             numPoints.Maximum = currentActivity.m_iMaxPoints;
+
+            CEvaluation evaluation = EvaluationRepository.GetEvaluation(m_Student, currentActivity);
+
+            if( evaluation != null )
+            {
+                txtTeacher.Text = evaluation.m_Evaluator.m_strFirstName + " " + evaluation.m_Evaluator.m_strLastName;
+                txtEvaluationDate.Text = evaluation.m_dateEvaluationDate.ToLongDateString();
+                numPoints.Value = evaluation.m_iPoints;
+            }
+            else
+            {
+                txtTeacher.Text = FrmLogin.m_LoggedTeacher.m_strFirstName + " " + FrmLogin.m_LoggedTeacher.m_strLastName;
+                txtEvaluationDate.Text = "-";
+                numPoints.Value = 0;
+            }
+
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
@@ -42,6 +63,11 @@ namespace Evaluation_Manager {
         
         private void SetFormText() {
             Text = m_Student.m_strFirstName + " " + m_Student.m_strLastName;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+            FrmLogin.m_LoggedTeacher.PerformEvaluation(m_Student, GetCurrentActivity(), (int)(numPoints.Value));
+            Close();
         }
     }
 }

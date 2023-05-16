@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Evaluation_Manager.repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,23 @@ namespace Evaluation_Manager.models
         {
             get; set;
         }   
+
+        public bool CheckPassword( string password )
+        {
+            return password == m_strPassword;
+        }
+
+        public void PerformEvaluation( CStudent student, CActivity activity, int points )
+        {
+            CEvaluation evaluation = EvaluationRepository.GetEvaluation(student, activity);
+            if( evaluation == null )
+            {
+                EvaluationRepository.InsertEvaluation(student, activity, this, points);
+            }
+            else
+            {
+                EvaluationRepository.UpdateEvaluation(evaluation, this, points);
+            }
+        }
     }
 }

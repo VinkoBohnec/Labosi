@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Evaluation_Manager.models;
+using Evaluation_Manager.repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,13 @@ namespace Evaluation_Manager
 {
     public partial class FrmLogin : Form
     {
-        string username = "nastavnik";
-        string password = "test";
-
         public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        public static CTeacher m_LoggedTeacher {
+            get; set;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -32,7 +35,8 @@ namespace Evaluation_Manager
             }
             else
             {
-                if (txtUsername.Text == username && txtPassword.Text == password)
+                m_LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
+                if( m_LoggedTeacher != null && m_LoggedTeacher.CheckPassword( txtPassword.Text ) )
                 {
                     FrmStudents frmStudents = new FrmStudents();
                     Hide();

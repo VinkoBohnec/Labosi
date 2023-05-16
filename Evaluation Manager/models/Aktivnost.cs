@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Evaluation_Manager.models {
+namespace Evaluation_Manager.models 
+{
     public class CActivity 
     {
         public int m_iID {

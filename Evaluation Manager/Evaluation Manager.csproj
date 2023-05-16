@@ -69,11 +69,14 @@
       <DependentUpon>FrmStudents.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Aktivnost.cs" />
+    <Compile Include="models\Evaluation.cs" />
     <Compile Include="models\Student.cs" />
     <Compile Include="models\Teacher.cs" />
     <Compile Include="models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repositories\EvaluationRepository.cs" />
+    <Compile Include="repositories\TeacherRepository.cs" />
     <Compile Include="repositories\ActivityRepository.cs" />
     <Compile Include="repositories\StudentRepository.cs" />
     <EmbeddedResource Include="FrmEvaluation.resx">
