@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace Evaluation_Manager.repositories
 {
-    public class TeacherRepository 
+    public static class TeacherRepository 
     {
         public static CTeacher GetTeacher(string username)
         {

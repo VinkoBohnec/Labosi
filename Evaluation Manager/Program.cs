@@ -20,8 +20,8 @@ namespace Evaluation_Manager
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin());
 
-            // DBLayer.DB.SetConfiguration("EvaluationManager", "vbohnec21", "bruh_naaahhh");
-            //SQL Server data tools
+            // DBLayer.DB.SetConfiguration("EvaluationManager", "vbohnec21", "bruh_naaahhh")
+            // SQL Server data tools
             // add sql server
             // naziv servera 
             // SQL server authentification

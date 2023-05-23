@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Evaluation_Manager.repositories {
-    public class EvaluationRepository
+    public static class EvaluationRepository
     {
         public static CEvaluation GetEvaluation(CStudent student, CActivity activity) {
             CEvaluation evaluation = null;

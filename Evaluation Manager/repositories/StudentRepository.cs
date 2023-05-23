@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Evaluation_Manager.repositories
 {
-    public class StudentRepository
+    public static class StudentRepository
     {
         public static CStudent GetStudent(int id)
         {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Evaluation_Manager.repositories {
-    public class ActivityRepository {
+    public static class ActivityRepository {
         public static CActivity GetActivity(int id) {
             CActivity activity = null;
 

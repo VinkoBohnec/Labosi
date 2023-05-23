@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmFinalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFinalReport.Designer.cs">
+      <DependentUpon>FrmFinalReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEvaluation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,7 @@
     <Compile Include="models\Aktivnost.cs" />
     <Compile Include="models\Evaluation.cs" />
     <Compile Include="models\Student.cs" />
+    <Compile Include="models\StudentReportView.cs" />
     <Compile Include="models\Teacher.cs" />
     <Compile Include="models\Person.cs" />
     <Compile Include="Program.cs" />
@@ -81,6 +88,9 @@
     <Compile Include="repositories\StudentRepository.cs" />
     <EmbeddedResource Include="FrmEvaluation.resx">
       <DependentUpon>FrmEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFinalReport.resx">
+      <DependentUpon>FrmFinalReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
